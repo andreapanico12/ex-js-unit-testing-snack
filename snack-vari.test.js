@@ -92,5 +92,20 @@ describe("Posts", () => {
     removePost(posts, postToRemove);
     expect(posts.length).toBe(initialLength - 1);
   })
+
+  test("lancia un errore se si aggiunge un post con id già esistente", () => {
+    const newPost = { id: 1, title: "Post duplicato", slug: "slug unico" };
+
+    expect(() => addPost(posts, newPost)).toThrow("Id già esistente");
+  });
+
+  test("lancia un errore se si aggiunge un post con slug già esistente", () => {
+    const newPost = { id: 99, title: "Post duplicato", slug: "Contenuto del post 2" };
+
+    expect(() => addPost(posts, newPost)).toThrow("Slug già esistente");
+  });
+
+
+
 });
 
