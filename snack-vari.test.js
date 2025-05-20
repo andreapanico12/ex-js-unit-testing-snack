@@ -1,4 +1,4 @@
-const { getInitials, createSlug, average } = require('./snack-vari.js');
+const { getInitials, createSlug, average, isPalindrome } = require('./snack-vari.js');
 
 // Snack-1
 test(`La funzione getInitials restituisce le iniziali di un nome completo.`, ()=>{

@@ -17,9 +17,16 @@ function average(numbers){
   return sum / numbers.length;
 }
 
+// FUNZIONE SNACK 5
+function isPalindrome(str) {
+  const reversedStr = str.split("").reverse().join("");
+  return str === reversedStr;
+}
+
 
 module.exports = {
   getInitials,
   createSlug,
-  average
+  average,
+  isPalindrome
 };
