@@ -1,4 +1,4 @@
-const { getInitials,createSlug } = require('./snack-vari.js');
+const { getInitials, createSlug, average } = require('./snack-vari.js');
 
 // Snack-1
 test(`La funzione getInitials restituisce le iniziali di un nome completo.`, ()=>{
@@ -16,11 +16,6 @@ test("La funzione createSlug restituisce una stringa in lowercase.", () =>{
   const result = createSlug(str);
   expect(result).toBe(expected);
 })
-
-function average(numbers){
-  const sum = numbers.reduce((acc,num) => acc + num, 0);
-  return sum / numbers.length;
-}
 
 // Snack-3
 test("La funzione average calcola la media aritmetica di un array di numeri.",() =>{

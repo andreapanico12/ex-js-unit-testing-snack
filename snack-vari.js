@@ -9,7 +9,16 @@ function getInitials(name){
 function createSlug(str){
   return str.toLowerCase();
 }
+
+// FUNZIONE SNACK 3
+function average(numbers){
+  const sum = numbers.reduce((acc,num) => acc + num, 0);
+  return sum / numbers.length;
+}
+
+
 module.exports = {
   getInitials,
-  createSlug
+  createSlug,
+  average
 };
