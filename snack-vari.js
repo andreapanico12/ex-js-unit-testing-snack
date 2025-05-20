@@ -5,6 +5,11 @@ function getInitials(name){
   return initials;
 }
 
+// FUNZIONE SNACK 2
+function createSlug(str){
+  return str.toLowerCase();
+}
 module.exports = {
-  getInitials
+  getInitials,
+  createSlug
 };
