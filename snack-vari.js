@@ -28,7 +28,8 @@ function isPalindrome(str) {
   return str === reversedStr;
 }
 
-const posts = [
+// FUNZIONE SNACK 7, 8
+const originalPosts = [
   { id: 1, title: "Post 1", slug: "Contenuto del post 1" },
   { id: 2, title: "Post 2", slug: "Contenuto del post 2" },
   { id: 3, title: "Post 3", slug: "Contenuto del post 3" }
@@ -38,12 +39,24 @@ function findPostById(posts, id) {
   return posts.find(post => post.id === id);
 }
 
+function addPost(posts, post) {
+  posts.push(post);
+}
+function removePost(posts, post) {
+  const index = posts.findIndex(p => p.id === post.id);
+  if (index !== -1) {
+    posts.splice(index, 1);
+  }
+}
+
 
 module.exports = {
   getInitials,
   createSlug,
   average,
   isPalindrome,
-  posts,
-  findPostById
+  originalPosts,
+  findPostById,
+  addPost,
+  removePost
 };

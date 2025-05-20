@@ -1,4 +1,6 @@
-const { getInitials, createSlug, average, isPalindrome, posts, findPostById } = require('./snack-vari.js');
+const { getInitials, createSlug, average, isPalindrome, originalPosts, findPostById, addPost, removePost } = require('./snack-vari.js');
+
+
 
 // Snack-1
 describe("getInitials", () => {
@@ -53,12 +55,42 @@ describe("isPalindrome", () => {
   });
 });
 
-// Snack-7
-describe("findPostById", () => {
+// Snack-7, snack-8
+
+
+let posts;
+
+beforeEach(() => {
+  posts = [...originalPosts];
+})
+afterEach(() => {
+  posts = null;
+})
+
+
+
+describe("Posts", () => {
   test("restituisce il post corretto dato l'array di post e l'id", () => {
     const id = 2;
     const expected = { id: 2, title: "Post 2", slug: "Contenuto del post 2" };
     const result = findPostById(posts, id);
     expect(result).toEqual(expected);
   });
+  test("Dopo aver aggiunto un post con la funzione addPost, l'array posts deve contenere un elemento in più.", () =>{
+    const initialLength = posts.length;
+    const newPost = { id: 4, title: "Post 4", slug: "Contenuto del post 4" };
+
+    addPost(posts, newPost);
+    expect(posts.length).toBe(initialLength + 1);
+    expect(posts).toContainEqual(newPost);
+  
+  })
+  test("Dopo aver rimosso un post con la funzione removePost, l'array posts deve contenere un elemento in meno.", () =>{
+    const initialLength = posts.length;
+    const postToRemove = { id: 1, title: "Post 1", slug: "Contenuto del post 1" };
+
+    removePost(posts, postToRemove);
+    expect(posts.length).toBe(initialLength - 1);
+  })
 });
+
