@@ -11,8 +11,8 @@ test(`La funzione getInitials restituisce le iniziali di un nome completo.`, ()=
 
 // Snack-2
 test("La funzione createSlug restituisce una stringa in lowercase.", () =>{
-  const str = "Ciao Mondo";
-  const expected = "ciao mondo";
+  const str = "Aspettami";
+  const expected = "aspettami";
   const result = createSlug(str);
   expect(result).toBe(expected);
 })
@@ -22,5 +22,13 @@ test("La funzione average calcola la media aritmetica di un array di numeri.",()
   const numbers = [1,2,3,4,5];
   const expected = 3;
   const result = average(numbers);
+  expect(result).toBe(expected);
+})
+
+// Snack-4
+test("La funzione createSlug sostituisce gli spazi con -.", () =>{
+  const str = "Ciao Mondo";
+  const expected = "ciao-mondo";
+  const result = createSlug(str);
   expect(result).toBe(expected);
 })

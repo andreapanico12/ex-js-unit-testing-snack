@@ -5,9 +5,10 @@ function getInitials(name){
   return initials;
 }
 
-// FUNZIONE SNACK 2
+// FUNZIONE SNACK 2 e 4
+// La funzione createSlug è stata modificata per includere la funzionalità di sostituzione degli spazi con '-'
 function createSlug(str){
-  return str.toLowerCase();
+  return str.toLowerCase().replace(/\s+/g, '-')
 }
 
 // FUNZIONE SNACK 3
