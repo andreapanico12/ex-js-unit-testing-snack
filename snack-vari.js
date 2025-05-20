@@ -5,9 +5,14 @@ function getInitials(name){
   return initials;
 }
 
-// FUNZIONE SNACK 2 e 4
+// FUNZIONE SNACK 2, 4, 6
 // La funzione createSlug è stata modificata per includere la funzionalità di sostituzione degli spazi con '-'
+// La funzione createSlug è stata modificata per includere la funzionalità di gestione degli errori
+
 function createSlug(str){
+  if (!str || typeof str !== 'string') {
+    throw new Error("Il titolo non può essere vuoto o non valido.");
+  }
   return str.toLowerCase().replace(/\s+/g, '-')
 }
 
