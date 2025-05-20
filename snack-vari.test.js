@@ -33,15 +33,20 @@ test("La funzione createSlug sostituisce gli spazi con -.", () =>{
   expect(result).toBe(expected);
 })
 
-function isPalindrome(str) {
-  const reversedStr = str.split("").reverse().join("");
-  return str === reversedStr;
-}
-
 // Snack-5
 test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
   const str = "abba";
   const expected = true;
   const result = isPalindrome(str);
   expect(result).toBe(expected);
+})
+
+// Snack-6
+test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () =>{
+  const str = "";
+  expect(() => createSlug(str)).toThrow("Il titolo non può essere vuoto o non valido.");
+  const str2 = null;
+  expect(() => createSlug(str2)).toThrow("Il titolo non può essere vuoto o non valido.");
+  const str3 = undefined;
+  expect(() => createSlug(str3)).toThrow("Il titolo non può essere vuoto o non valido.");
 })
